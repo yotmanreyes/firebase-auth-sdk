@@ -1,0 +1,38 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Variables de entorno
+.env
+!.env.example
+
+# Archivos de Firebase
+src/*-firebase-adminsdk-*.json
+.firebase
+firebase-debug.log
+firebase-debug.*.log
+.firebaserc
+
+# Archivos de control de versiones
+.git
+.gitignore
+.github
+.gitattributes
+
+# Archivos de desarrollo
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
