@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Confirma tu correo electrónico</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .button {
+      display: inline-block; 
+      padding: 10px 20px; 
+      background-color: #4CAF50; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>¡Gracias por registrarte, <%= user.displayName || 'Usuario' %>!</h2>
+    <p>Por favor confirma tu dirección de correo electrónico haciendo clic en el siguiente botón:</p>
+    <a href="<%= confirmUrl %>" class="button">Confirmar correo electrónico</a>
+    <p>Si el botón no funciona, copia y pega esta URL en tu navegador:</p>
+    <p><%= confirmUrl %></p>
+    <p>Si no te has registrado en nuestra plataforma, por favor ignora este correo.</p>
+    <p>Atentamente,<br>El equipo de <%= appName %></p>
+  </div>
+</body>
+</html>

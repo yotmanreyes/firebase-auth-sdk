@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>¡Bienvenido a <%= appName %>!</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .button {
+      display: inline-block; 
+      padding: 10px 20px; 
+      background-color: #9C27B0; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>¡Bienvenido a <%= appName %>, <%= user.displayName || 'Usuario' %>! 🎉</h2>
+    <p>¡Gracias por unirte a nuestra comunidad! Estamos emocionados de tenerte con nosotros.</p>
+    <p>Con tu cuenta podrás:</p>
+    <ul>
+      <li>Acceder a todas las funciones de nuestra plataforma</li>
+      <li>Gestionar tu perfil y preferencias</li>
+      <li>Y mucho más...</li>
+    </ul>
+    <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactar a nuestro equipo de soporte.</p>
+    <p>¡Esperamos que disfrutes de tu experiencia con nosotros!</p>
+    <p>Atentamente,<br>El equipo de <%= appName %></p>
+  </div>
+</body>
+</html>

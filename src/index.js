@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
+const pino = require('pino');
 
 // Initialize Express app
 const app = express();
@@ -12,6 +14,11 @@ const userRoutes = require('./routes/userRoutes');
 // Middleware
 app.use(cors());
 app.use(express.json());
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+} else {
+  app.use(pino());
+}
 
 // Initialize Firebase
 require('./config/firebase');
