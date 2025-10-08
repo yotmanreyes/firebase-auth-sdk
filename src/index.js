@@ -11,8 +11,17 @@ const port = process.env.PORT || 3000;
 // Import routes
 const userRoutes = require('./routes/userRoutes');
 
+const corsOptions = {
+  origin: [
+    'https://drjduarte.com',
+    'http://localhost:5173' 
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
