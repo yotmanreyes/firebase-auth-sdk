@@ -14,6 +14,7 @@ const userRoutes = require('./routes/userRoutes');
 const corsOptions = {
   origin: [
     'https://drjduarte.com',
+    'https://www.drjduarte.com',
     'http://localhost:5173' 
   ],
   credentials: true,
