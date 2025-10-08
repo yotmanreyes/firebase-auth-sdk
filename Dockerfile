@@ -1,6 +1,7 @@
-FROM node:22-alpine
+# FROM node:22-alpine
+FROM node:22-slim
 WORKDIR /app
-RUN apk add --no-cache python3 make g++
+# RUN apk add --no-cache python3 make g++
 COPY package*.json /app
 RUN npm install
 COPY . /app
