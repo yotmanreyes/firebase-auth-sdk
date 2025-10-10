@@ -1,3 +1,7 @@
+process.env.GRPC_SSL_CIPHER_SUITES = 'HIGH+ECDSA';
+process.env.GRPC_VERBOSITY = 'ERROR';
+process.env.GRPC_TRACE = 'none';
+
 const admin = require('firebase-admin');
 
 require('dotenv').config();
@@ -28,11 +32,15 @@ try {
   throw error; // Re-throw to prevent further execution
 }
 
-const db = admin.firestore();
 const auth = admin.auth();
+const db = admin.firestore();
+
+console.log('📦 Firestore instance:', db ? 'Loaded' : 'Undefined');
+db.settings({ ignoreUndefinedProperties: true, preferRest: false });
 
 // Test the database connection
 const testDbConnection = async () => {
+  console.log('🔄 Probando conexión a Firestore...');
   try {
     await db.collection('test').doc('test').get();
     console.log('✅ Successfully connected to Firestore');
